@@ -1,0 +1,77 @@
+/* Creating Tables */ 
+CREATE TABLE VENDOR_INFO(
+Vendor_ID	Int        	NOT NULL IDENTITY (1,1),
+First_Name  	Char(35)    	NOT NULL,
+Last_Name   	Char(35)    	NOT NULL,
+Phone_Number Char(35)    	NOT NULL,
+ADDRESS    	Char(45)    	NOT NULL,
+CITY    	Char(35)	NOT NULL,
+STATE     	Char(35)    	NOT NULL,
+ZIPCODE    	Char(35)       	NOT NULL,
+TAX_ID    	Char(35)        	NOT NULL,
+Comments	VarChar(100)       	NULL,
+CONSTRAINT     	VENDOR_INFO_PK 	PRIMARY KEY(Vendor_ID),
+);
+CREATE TABLE BOOTH_INFO(
+	Booth_ID    	Char(20)    	NOT NULL,
+	Lot_Size    	Char(30)    	NOT NULL,
+	Rent        	Numeric(6,2)    	NOT NULL,
+	Booth_Color	Char(20)    	NOT NULL,
+	Location    	Char(25)    	NOT NULL,
+	Amenities    	Char(25)    	NULL,
+	CONSTRAINT     	BOOTH_INFO_PK    	PRIMARY KEY(Booth_ID)
+	);
+CREATE TABLE CHECK_TRACKING(
+Check_Number	Char(25)   	NOT NULL,
+DOI            	Char(20)	NOT NULL,
+AMOUNT        	Int        	NOT NULL,
+Vendor_ID        	Int        	NOT NULL,
+CONSTRAINT    	CHECK_TRACK_PK    	PRIMARY KEY(Check_Number),
+CONSTRAINT    	CHECK_TRACK_FK    	FOREIGN KEY(Vendor_ID)
+                	REFERENCES VENDOR_INFO(Vendor_ID)
+);
+
+CREATE TABLE ITEMS_VENDOR(
+Item_ID        	Int             	NOT NULL IDENTITY (501,1),
+Description 	Char(50)        	NOT NULL,
+Price        	Int        	NOT NULL,
+Category 	Char(35)    	NOT NULL,
+CONSTRAINT    	ITEMS_PK  PRIMARY KEY(Item_ID),
+);
+
+CREATE TABLE FINANCIAL(
+Finance_ID    	Int    	NOT NULL IDENTITY (601, 1),
+Commission_Rate     	Numeric(4,2)   	NOT NULL,
+Discount_Rent_Rate	Numeric(4,2)     	NOT NULL,
+Rent_With_Discount   	Int       	NOT NULL,
+Returned_Rev       	Numeric(5,2)   	NOT NULL,
+Mall_Rev           	Numeric(5,2)   	NOT NULL,
+CONSTRAINT    	FINANCE_PK    	PRIMARY KEY (Finance_ID)
+);
+CREATE TABLE SALES_VENDOR(
+Sales_ID	Int         	NOT NULL IDENTITY (101,1),
+ITEM_ID    	Int        	NOT NULL,
+VENDOR_ID	Int         	NOT NULL,
+Finance_ID	Int         	NOT NULL,
+Quantity	Int        	NOT NULL,
+Date_of_Sale	Char(35)       	NOT NULL,
+CONSTRAINT     	SALES_VENDOR_1_PK	PRIMARY KEY(Sales_ID),
+CONSTRAINT    	SALES_VENDOR_2_FK	FOREIGN KEY(Item_ID)
+                	REFERENCES ITEMS_VENDOR(Item_ID),
+CONSTRAINT    	SALES_VENDOR_3_FK	FOREIGN KEY(Vendor_ID)
+                	REFERENCES VENDOR_INFO(Vendor_ID),
+CONSTRAINT 	SALES_VENDOR_4_FK	FOREIGN KEY(Finance_ID)
+                        	REFERENCES FINANCIAL(Finance_ID)
+);
+CREATE TABLE CONTRACTS(	
+Booth_ID    	Char(20)	NOT NULL,
+Sales_ID    	Int        	NOT NULL,
+Start_Date    	Char(15)	NOT NULL,
+End_Date    	Char(15)	NOT NULL,
+Company_Name	Char(45)	NOT NULL,
+CONSTRAINT 	CONTRACTS_PK	PRIMARY KEY( Booth_ID,Sales_ID),
+CONSTRAINT 	CONTRACTS_1_FK	FOREIGN KEY(Booth_ID)
+				REFERENCES BOOTH_INFO(Booth_ID),
+CONSTRAINT		CONTRACTS_2_FK	FOREIGN KEY(Sales_ID)
+				REFERENCES SALES_VENDOR(Sales_ID)
+);
