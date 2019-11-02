@@ -1,0 +1,147 @@
+INSERT INTO VENDOR_INFO (First_Name, Last_Name, Phone_Number, ADDRESS, CITY, STATE, ZIPCODE, TAX_ID, COMMENTS)
+	VALUES(
+	'Marcia' , 'Tyler' , '5004748703', '9800 Harbor Lane' , 'Columbus' , 'Ohio' , '94566' ,'9439583' , ' ' );
+INSERT INTO VENDOR_INFO VALUES(
+	'Taylor' , 'Quam' , '2424445336' , '68 Glenridge Street' , 'Salt Lake' , 'Utah' , '48823' , '9798466' , ' ');
+INSERT INTO VENDOR_INFO VALUES(
+	'Maria' , 'Brockman' , '7376428399' , '751 SE. Green Hill Street' , 'Compton' , 'California' , '12590' , '5693147' , '10% rent discount');
+INSERT INTO VENDOR_INFO VALUES(
+	'Madeline' , 'Schmidt' , '3126159326' , '8660 New Saddle Street' , 'Anaheim' , 'California' , '15102' , '4269354', ' ');
+INSERT INTO VENDOR_INFO VALUES(
+	'John' , 'Smit' , '8094338768' , '313 Washington Ave.' , 'Fort Wayne' , 'Indiana' , '53045' , '3265824' , '10% commission rate');
+INSERT INTO VENDOR_INFO VALUES(
+	'Cam' , 'Newton' , '7145559687' , '7714 Railroad St.' , 'Charlotte' , 'North Carolina' , '43651' , '5575615', ' ');
+INSERT INTO VENDOR_INFO VALUES(
+	'Dabon' , 'Kevin' , '1238675309' , '4589 Yonkers' , 'New York' , 'New York' , '56878' , '5462133' , ' ');
+INSERT INTO VENDOR_INFO VALUES(
+	'Carmela' , 'Yeet' , '5621125899' , '931 James Street' , 'Springfield' , 'Maine' , '64785' , '6794651' , '10% rent discount ');
+INSERT INTO VENDOR_INFO VALUES(
+	'Sam' , 'Iam' , '8089453698' , '121 Port Orange St.' , 'PalmDale' , 'Florida' , '91456' , '1478346' , ' ');
+INSERT INTO VENDOR_INFO VALUES(
+	'Eminem' , 'Mathers' , '9496359456' , '94 Grant Ave.' , 'Irvine' , 'California' , '74915' , '7469453' , ' ');
+
+/****** BOOTH_INFO *****/
+INSERT INTO BOOTH_INFO (Booth_ID, Lot_Size, Rent, Booth_color, Location, Amenities)
+	VALUES( 'A-20', '12X18', 310.00, 'Green', 'Outside Perimeter', 'Rafters');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'B-15', '8X10', 120.00, 'Green', 'Inside Perimeter', 'Carpet');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'C-15', '8X20', 200.00, 'Tan', 'Aisle', 'Carpet & Rafters');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'C-10', '8X8', 90.00, 'White', 'Aisle', 'Carpet');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'C-01', '8X8', 90.00, 'White', 'Aisle', 'Carpet');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'A-19', '12X18', 310.00, 'Yellow', 'Outside Perimeter', 'Rafters');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'B-09', '8X10', 120.00, 'White', 'Inside Perimeter', 'Carpet & Rafters');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'A-07', '12X12', 290.00, 'Green', 'Outside Perimeter', 'Carpet & Rafters');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'C-06', '8X8', 90.00, 'Tan', 'Aisle', 'Carpet');
+INSERT INTO BOOTH_INFO VALUES(
+ 	'B-05', '8X8', 105.00, 'White', 'Inside Perimeter', 'Rafters');
+/***** CHECK TRACKING *****/
+INSERT INTO CHECK_TRACKING VALUES(
+' 3229005230', '04/05/2018', 123, 1);
+INSERT INTO CHECK_TRACKING VALUES(
+'1427308481', '06/25/2018', 211,2);
+INSERT INTO CHECK_TRACKING VALUES(
+'9010910491', '7/11/2018', 187,3);
+INSERT INTO CHECK_TRACKING VALUES(
+'7893171129', '8/6/2018', 204,4);
+INSERT INTO CHECK_TRACKING VALUES(
+'1339193240', '9/11/2018', 111,5);
+INSERT INTO CHECK_TRACKING VALUES(
+'3882442022', '10/10/2018', 133,6);
+INSERT INTO CHECK_TRACKING VALUES(
+'6120526422', '2/19/2019', 375,7);
+INSERT INTO CHECK_TRACKING VALUES(
+'7927150386', '2/19/2018', 96,8);
+INSERT INTO CHECK_TRACKING VALUES(
+'7632899493', '5/23/2018', 164,9);
+INSERT INTO CHECK_TRACKING VALUES(
+'5999382568', '8/9/2018',311,10);
+
+/***** ITEMS OF VENDORS *****/
+INSERT INTO ITEMS_VENDOR  (Description, Price, Category)
+	VALUES(
+	'Iphone Charger', 10, 'Electronics');
+INSERT INTO ITEMS_VENDOR VALUES( 'Kitchen aid Spoon', 20, 'Kitchenware');
+INSERT INTO ITEMS_VENDOR VALUES ( 'Chess Board', 25, 'Entertainment');
+INSERT INTO ITEMS_VENDOR VALUES ('Beaker', 65, 'Medical');
+INSERT INTO ITEMS_VENDOR VALUES ('Car Jack', 55, 'Automotive');
+INSERT INTO ITEMS_VENDOR VALUES ('Diffuser', 40, 'Home Appliances');
+INSERT INTO ITEMS_VENDOR VALUES ('Light Bulbs', 10, 'Electronics');
+INSERT INTO ITEMS_VENDOR VALUES ('Hamburger', 12, 'Food');
+INSERT INTO ITEMS_VENDOR VALUES ('Book', 25, 'Entertainment');
+INSERT INTO ITEMS_VENDOR VALUES ('Board Game', 35, 'Entertainment');
+
+/***** FINANCIAL*****/
+
+INSERT INTO FINANCIAL( Commission_Rate, Discount_Rent_Rate, Rent_With_Discount, Returned_Rev, Mall_Rev)
+	VALUES(
+5.00, 0.00, 310, 120.00, 360.00);
+INSERT INTO FINANCIAL VALUES(
+5.00,0.00, 120, 210.00,175.00);
+INSERT INTO FINANCIAL VALUES(
+5.00, 10.00, 180, 50.00, 210);
+INSERT INTO FINANCIAL VALUES(
+5.00, 0.00, 90, 190.00, 130);
+INSERT INTO FINANCIAL VALUES(
+10.00, 0.00, 90, 170.00, 100);
+INSERT INTO FINANCIAL VALUES(
+5.00, 0.00, 310, 50.00, 330.00);
+INSERT INTO FINANCIAL VALUES(
+5.00, 0.00, 120, 90.00, 145.00);
+INSERT INTO FINANCIAL VALUES(
+5.00, 10.00,  261.00, 120.00, 280.00);
+INSERT INTO FINANCIAL VALUES(
+5.00, 0.00, 90, 75.00, 110.00);
+INSERT INTO FINANCIAL VALUES(
+5.00,0.00, 105, 110.00, 115.00);
+/****** SALES_VENDOR******/
+INSERT INTO SALES_VENDOR ( ITEM_ID, VENDOR_ID, Finance_ID, Quantity, Date_of_Sale)
+	VALUES( 501, 1, 601, 2, '11/20/2019');
+INSERT INTO SALES_VENDOR VALUES(
+502, 2, 602, 5, '11/18/2019');
+INSERT INTO SALES_VENDOR VALUES(
+503, 3, 603, 8, '11/2/2019');
+INSERT INTO SALES_VENDOR VALUES(
+504, 4, 604, 9, '11/9/2019');
+INSERT INTO SALES_VENDOR VALUES(
+505, 5, 605, 4, '11/5/2019');
+INSERT INTO SALES_VENDOR VALUES(
+506, 6, 606, 6, '11/16/2019');
+INSERT INTO SALES_VENDOR VALUES(
+507, 7, 607, 4, '11/8/0209');
+INSERT INTO SALES_VENDOR VALUES(
+508, 8, 608, 8, '11/16/2019');
+INSERT INTO SALES_VENDOR VALUES(
+509, 9, 609, 12, '11/20/2019');
+INSERT INTO SALES_VENDOR VALUES(
+510, 10, 610, 6, '11/2/2019');
+
+
+
+/******CONTRACTS*****/
+INSERT INTO CONTRACTS VALUES(
+'A-20', 101, '7/7/2016', '11/18/2019', 'Radiant Coms');
+INSERT INTO CONTRACTS VALUES(
+'B-15', 102, '12/20/2016','1/6/2020', 'Shade Sports');
+INSERT INTO CONTRACTS VALUES(
+'C-15',103, '5/5/2017', '1/28/2020', 'Cavern Coms');
+INSERT INTO CONTRACTS VALUES(
+'C-10', 104, '6/11/2015', '2/25/2020', 'Moondustries');
+INSERT INTO CONTRACTS VALUES(
+'C-01', 105, '1/14/2016', '3/6/2020', 'Aurarts');
+INSERT INTO CONTRACTS VALUES(
+'A-19', 106, '10/19/2018', '4/8/2020', 'Flukords');
+INSERT INTO CONTRACTS VALUES(
+'B-09', 107, '2/19/2018', '4/29/2020','Web works');
+INSERT INTO CONTRACTS VALUES(
+'A-07', 108,  '10/17/2016', '5/12/2020', 'Gorilla tube');
+INSERT INTO CONTRACTS VALUES(
+'C-06', 109, '10/9/2017','5/14/2020','River tronics');
+INSERT INTO CONTRACTS VALUES(
+'B-05', 110, '3/30/2016', '8/18/2020', 'Honey techs');
